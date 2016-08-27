@@ -1,32 +1,24 @@
 package com.rakesh.example.springbeans;
+
+import java.awt.List;
+import java.util.* ;
+
 public class Triangle {
-	private Point pointA;
-	private Point pointB;
-	private Point pointC;
 	
-	public Point getPointA() {
-		return pointA;
-	}
-	public void setPointA(Point pointA) {
-		this.pointA = pointA;
-	}
-	public Point getPointB() {
-		return pointB;
-	}
-	public void setPointB(Point pointB) {
-		this.pointB = pointB;
-	}
-	public Point getPointC() {
-		return pointC;
-	}
-	public void setPointC(Point pointC) {
-		this.pointC = pointC;
-	}
+	private ArrayList<Point> points;
 	
-	
+	public ArrayList<Point> getPoints() {
+		return points;
+	}
+
+	public void setPoints(ArrayList<Point> points) {
+		this.points = points;
+	}
+
 	public void Draw(){
-		System.out.println("Point A (" + getPointA().getX() + " , " + getPointA().getY()+ " ) ");
-		System.out.println("Point B (" + getPointB().getX() + " , " + getPointB().getY()+ " ) ");
-		System.out.println("Point C (" + getPointC().getX() + " , " + getPointC().getY()+ " ) ");
+		
+		for(Point point : points){
+		System.out.println("Point  (" + point.getX() + " , " + point.getY()+ " ) ");
+		}
 	}
 }
