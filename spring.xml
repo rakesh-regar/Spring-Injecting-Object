@@ -2,28 +2,29 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
- <bean id="triangle" class="com.rakesh.example.springbeans.Triangle">
-  <property name="pointA" ref="zeroPoint"/>
-  <property name="pointB">
-  	<bean class="com.rakesh.example.springbeans.Point">
-  		<property name="x" value="10"/>
-  		<property name="y" value="0"/>
- 	</bean>
-  </property>
- <property name="pointC">
- 	<bean class="com.rakesh.example.springbeans.Point">
-  		<property name="x" value="0"/>
-  		<property name="y" value="10"/>
- 	</bean>
- </property>   
+ <bean id="triangle" class="com.rakesh.example.springbeans.Triangle" abstract="true">
+   <property name="pointA" ref="pointA"/>
+  
  </bean>
  
-  <bean id="zeroPoint" class="com.rakesh.example.springbeans.Point">
+ <bean id="triangle1" class="com.rakesh.example.springbeans.Triangle" parent="triangle">
+   <property name="pointB" ref="pointB"/>
+   <property name="pointC" ref="pointC"/>
+ </bean>
+ 
+ <bean id="pointA" class="com.rakesh.example.springbeans.Point" >
   <property name="x" value="0"/>
   <property name="y" value="0"/>
  </bean>
  
- <alias name="triangle" alias="triangle-alias" />
+ <bean id="pointB" class="com.rakesh.example.springbeans.Point">
+  <property name="x" value="10"/>
+  <property name="y" value="0"/>
+ </bean>
  
+ <bean id="pointC" class="com.rakesh.example.springbeans.Point">
+  <property name="x" value="0"/>
+  <property name="y" value="10"/>
+ </bean>
  
 </beans>
