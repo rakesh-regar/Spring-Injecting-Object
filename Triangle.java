@@ -61,10 +61,17 @@ public class Triangle implements InitializingBean ,DisposableBean{
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("Init method for Bean is called");
+		System.out.println("Initialization method for Bean is called");
 		
 	}
-
-
+   
+	public void inIt(){
+		System.out.println("Init method for Bean is called");
+	}
+ 
+	 public void cleanUp(){
+		 System.out.println("CleanUp method for Bean is called");
+		 
+	 }
 	
 }

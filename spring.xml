@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
- <bean id="triangle" class="com.rakesh.example.springbeans.Triangle" abstract="true">
+ <bean id="triangle" class="com.rakesh.example.springbeans.Triangle" abstract="true" init-method="inIt" destroy-method="cleanUp">
    <property name="pointA" ref="pointA"/>
   
  </bean>
